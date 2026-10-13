@@ -140,3 +140,9 @@ footer p,footer>a:last-child{font-size:11px;color:#888}
  .demo-card{min-width:160px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ZIXOMA V2 — Hide hero phone mockup */
+.hero .phone-wrap {
+  display: none !important;
+}
+
