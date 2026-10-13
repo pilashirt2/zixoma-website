@@ -1,0 +1,20 @@
+/* ZIXOMA V2 — Section 03 orbit, standalone scoped CSS */
+.zx-evm-orbit {position:relative;width:min(100%,450px);aspect-ratio:1;isolation:isolate;margin:auto;}
+.zx-evm-orbit *{box-sizing:border-box}
+.zx-evm-planet{position:absolute;inset:24%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 25%,#4a4a4a 0%,#242424 27%,#090909 70%,#020202 100%);box-shadow:inset -18px -18px 35px #000,inset 8px 8px 22px #7775,0 0 35px #fff1;z-index:2;}
+.zx-evm-planet::before{content:"";position:absolute;inset:0;border:1px solid #ffffff38;border-radius:50%;background:repeating-radial-gradient(ellipse at 30% 32%,transparent 0 9px,#ffffff05 10px 11px);}
+.zx-evm-brand{position:relative;width:44%;height:44%;object-fit:contain;filter:drop-shadow(0 0 12px #fff6)}
+.zx-orbit{position:absolute;inset:16% 5%;border:1px solid #ffffff55;border-radius:50%;transform:rotate(var(--tilt)) scaleY(.46);pointer-events:none;}
+.zx-orbit:nth-of-type(2){border-color:#ffffff35}
+.zx-orbit:nth-of-type(3){border-color:#ffffff28}
+.zx-satellite-path{position:absolute;inset:16% 5%;transform:rotate(var(--tilt)) scaleY(.46);animation:zx-orbit-spin var(--duration) linear infinite;pointer-events:none;}
+.zx-satellite{position:absolute;left:50%;top:0;transform:translate(-50%,-50%) scaleY(2.1739) rotate(calc(-1 * var(--tilt)));display:grid;place-items:center;width:34px;height:34px;padding:6px;border-radius:50%;border:1px solid #ffffff55;background:#090a0ce8;box-shadow:0 2px 12px #000a,0 0 8px #ffffff1c;}
+.zx-satellite img{display:block;width:100%;height:100%;object-fit:contain;}
+.zx-satellite-path:nth-child(even){animation-direction:reverse}
+@keyframes zx-orbit-spin{to{transform:rotate(calc(var(--tilt) + 360deg)) scaleY(.46)}}
+/* Center keeps orbiting logos legible; orbit movement is real, not a still image. */
+.zx-evm-networks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 10px;text-align:center;}
+.zx-evm-network{display:flex;flex-direction:column;align-items:center;gap:9px;color:#eee;font-size:12px;}
+.zx-evm-network img{width:34px;height:34px;object-fit:contain;}
+@media(max-width:700px){.zx-evm-orbit{width:min(100%,340px)}.zx-satellite{width:27px;height:27px;padding:5px}.zx-evm-network img{width:30px;height:30px}}
+@media(prefers-reduced-motion:reduce){.zx-satellite-path{animation:none}}
