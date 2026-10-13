@@ -39,3 +39,12 @@ section.evm::before,
 section.evm::after {
   content: none !important;
 }
+
+/* Section 03 — Matching cinematic background */
+section.evm {
+  background-image: url("assets/zixoma-evm-background-v2.webp") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #030405;
+}
