@@ -1,9 +1,7 @@
-# ZIXOMA V2 — approved design reference implementation
+# ZIXOMA V2 — real HTML/CSS website
 
-- Desktop: displays the founder-approved generated master artwork exactly as provided (pixel-faithful raster reference), with navigation hotspots linking to real content sections.
-- Mobile: responsive HTML/CSS interpretation for legibility, not an exact pixel match to the desktop artwork.
-- Feature descriptions and mock balances shown in the master artwork are concepts, NOT deployed or audited features. Actual supported networks are not yet announced.
-- No signup backend or playable video is included; do not claim otherwise.
-- To preview, open `index.html` in a browser. Deploy as a static site to Vercel or GitHub Pages.
-- Existing live V1 site is NOT changed by this package.
-- Before final launch, replace desktop raster with a fully rebuilt responsive layout if editable content, SEO and accessibility on desktop are required.
+No full-page screenshot is used. Layout, sections, buttons, cards, wallet concept, and decorative Monolith Z are built in HTML/CSS. Only the brand logo is an SVG asset.
+
+This is a static design prototype, not a functioning cryptocurrency wallet. Feature demos and balances are illustrative; no beta signup or wallet connection exists. Network names are examples, not verified support.
+
+To update existing `zixoma-website` repo: switch to `v2-development` branch, replace root `index.html`, `styles.css`, `script.js`, and upload the two SVGs to `assets/`. Leave `main` unchanged. Verify Vercel preview before merging.
