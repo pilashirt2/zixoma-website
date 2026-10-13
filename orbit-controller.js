@@ -119,8 +119,8 @@
 
         // Outside planet: always visible.
         // Behind planet + inside boundary: fade out.
-        const opacity = 1 - edgeMask * depthMask;
-
+        const opacity = 1 - edgeMask;
+        
         satellite.style.transform =
           `translate(
             calc(-50% + ${x.toFixed(2)}px),
