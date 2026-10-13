@@ -23,3 +23,19 @@
   object-fit: contain;
   filter: drop-shadow(0 0 16px rgba(255,255,255,.28));
 }
+
+/* ZIXOMA Section 03 — Cinematic Image Background */
+
+section.evm {
+  background-image: url("assets/zixoma-evm-background.webp") !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-color: #030508;
+}
+
+/* Remove previous CSS-only galaxy overlays */
+section.evm::before,
+section.evm::after {
+  content: none !important;
+}
