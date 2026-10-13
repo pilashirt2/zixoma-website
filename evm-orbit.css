@@ -48,3 +48,33 @@ section.evm {
   background-repeat: no-repeat !important;
   background-color: #030405;
 }
+
+/* ZIXOMA — Section 02 to 03 seamless transition */
+
+section.evm {
+  position: relative;
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+/* Fade the top edge of Section 03 background */
+section.evm {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 100px,
+    black 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 100px,
+    black 100%
+  );
+}
+
+/* Pull Section 03 slightly over Section 02 */
+section.evm {
+  margin-top: -70px;
+  padding-top: 70px;
+}
