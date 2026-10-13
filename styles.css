@@ -199,3 +199,24 @@ footer p,footer>a:last-child{font-size:11px;color:#888}
   }
 }
 
+/* Hero ending — soft cinematic fade */
+
+.hero {
+  border-bottom: 0 !important;
+}
+
+.hero::after {
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,.82) 0%,
+    rgba(0,0,0,.45) 32%,
+    rgba(0,0,0,.08) 70%
+  ),
+  linear-gradient(
+    to bottom,
+    transparent 68%,
+    rgba(0,0,0,.55) 88%,
+    #000 100%
+  ) !important;
+}
+
