@@ -78,3 +78,90 @@ section.evm {
   margin-top: -70px;
   padding-top: 70px;
 }
+
+/* ZIXOMA — SECTION 02 TO 03 SEAMLESS BLEND */
+
+/* Remove the actual divider */
+#security.z-security {
+  border-bottom: none !important;
+}
+
+/* Reset previous unsuccessful transition patches */
+section.evm {
+  position: relative !important;
+  isolation: isolate;
+  overflow: visible !important;
+  margin-top: 0 !important;
+
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+
+  border-top: none !important;
+  box-shadow: none !important;
+
+  background: transparent !important;
+}
+
+/* Extend Section 03 scenery into Section 02
+   and gradually reveal it */
+section.evm::before {
+  content: "" !important;
+  position: absolute;
+  top: -110px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-image:
+    url("assets/zixoma-evm-minimal-background.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 110px,
+    black 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 110px,
+    black 100%
+  );
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Remove older galaxy overlay */
+section.evm::after {
+  content: none !important;
+}
+
+/* Keep text, planet and network logos on top */
+section.evm > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Smaller blend area on mobile */
+@media (max-width: 700px) {
+  section.evm::before {
+    top: -75px;
+
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      black 75px
+    );
+
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      black 75px
+    );
+  }
+}
