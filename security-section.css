@@ -191,3 +191,47 @@
     background-position: 62% center;
   }
 }
+
+/* ZIXOMA SECURITY — BACKGROUND FIX */
+
+#security.z-security {
+  position: relative;
+  isolation: isolate;
+  background-image: url("assets/security-cinematic.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Remove the old gradient atmosphere layer */
+#security .z-security-atmosphere {
+  display: none !important;
+}
+
+/* Keep a light dark overlay for text readability */
+#security.z-security::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.12) 50%,
+    rgba(0,0,0,.48)
+  );
+}
+
+#security .z-security-intro,
+#security .z-security-pillars,
+#security .z-security-disclaimer {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  #security.z-security {
+    background-position: 62% center !important;
+  }
+}
