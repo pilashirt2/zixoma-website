@@ -235,3 +235,39 @@
     background-position: 62% center !important;
   }
 }
+
+/* ZIXOMA V2 — SEAMLESS CINEMATIC TRANSITION */
+
+#security.z-security {
+  position: relative;
+  isolation: isolate;
+  border-top: 0;
+  background-position: center center !important;
+}
+
+/* Fog transition from Hero into Security */
+#security.z-security::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 190px;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, .96) 0%,
+    rgba(0, 0, 0, .78) 22%,
+    rgba(0, 0, 0, .40) 58%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Keep security content above fog */
+#security .z-security-intro,
+#security .z-security-pillars,
+#security .z-security-disclaimer {
+  position: relative;
+  z-index: 2;
+}
