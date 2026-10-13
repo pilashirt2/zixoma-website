@@ -34,3 +34,59 @@
     animation: none !important;
   }
 }
+
+/* ZIXOMA SECTION 03 — ORBIT VISIBILITY FIX */
+
+/* Keep orbit paths visible outside the planet */
+.zx-evm-orbit {
+  overflow: visible;
+}
+
+/* Planet behind the orbiting logos */
+.zx-evm-planet {
+  z-index: 2;
+}
+
+/* Satellite paths above planet */
+.zx-satellite-path {
+  z-index: 4;
+  will-change: transform;
+}
+
+/* Bigger, clearly visible satellite logos */
+.zx-satellite {
+  width: 48px;
+  height: 48px;
+  padding: 5px;
+  background: #101114;
+  border: 1px solid rgba(255,255,255,.55);
+  box-shadow: 0 0 15px rgba(255,255,255,.16);
+}
+
+/* Right-side larger logos */
+.networks .zx-evm-network img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.networks .zx-evm-networks {
+  gap: 24px 14px;
+}
+
+.networks .zx-evm-network {
+  gap: 12px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .zx-satellite {
+    width: 36px;
+    height: 36px;
+  }
+
+  .networks .zx-evm-network img {
+    width: 48px;
+    height: 48px;
+  }
+}
