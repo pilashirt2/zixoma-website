@@ -1,143 +1,17 @@
-/* ZIXOMA V2 — Section 03 orbit, standalone scoped CSS */
-.zx-evm-orbit {position:relative;width:min(100%,450px);aspect-ratio:1;isolation:isolate;margin:auto;}
+/* ZIXOMA Section 03 — clean, responsive orbital system */
+.zx-evm-orbit{position:relative;width:min(100%,450px);aspect-ratio:1;margin:auto;isolation:isolate;overflow:visible}
 .zx-evm-orbit *{box-sizing:border-box}
-.zx-evm-planet{position:absolute;inset:24%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 25%,#4a4a4a 0%,#242424 27%,#090909 70%,#020202 100%);box-shadow:inset -18px -18px 35px #000,inset 8px 8px 22px #7775,0 0 35px #fff1;z-index:2;}
-.zx-evm-planet::before{content:"";position:absolute;inset:0;border:1px solid #ffffff38;border-radius:50%;background:repeating-radial-gradient(ellipse at 30% 32%,transparent 0 9px,#ffffff05 10px 11px);}
+.zx-evm-planet{position:absolute;inset:24%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 25%,#4a4a4a 0%,#242424 27%,#090909 70%,#020202 100%);box-shadow:inset -18px -18px 35px #000,inset 8px 8px 22px #7775,0 0 35px #fff1;z-index:2}
+.zx-evm-planet::before{content:"";position:absolute;inset:0;border:1px solid #ffffff38;border-radius:50%;background:repeating-radial-gradient(ellipse at 30% 32%,transparent 0 9px,#ffffff05 10px 11px)}
 .zx-evm-brand{position:relative;width:44%;height:44%;object-fit:contain;filter:drop-shadow(0 0 12px #fff6)}
-.zx-orbit{position:absolute;inset:16% 5%;border:1px solid #ffffff55;border-radius:50%;transform:rotate(var(--tilt)) scaleY(.46);pointer-events:none;}
+.zx-orbit{position:absolute;inset:16% 5%;border:1px solid #ffffff55;border-radius:50%;transform:rotate(var(--tilt)) scaleY(.46);pointer-events:none}
 .zx-orbit:nth-of-type(2){border-color:#ffffff35}
 .zx-orbit:nth-of-type(3){border-color:#ffffff28}
-.zx-satellite-path{position:absolute;inset:16% 5%;transform:rotate(var(--tilt)) scaleY(.46);animation:zx-orbit-spin var(--duration) linear infinite;pointer-events:none;}
-.zx-satellite{position:absolute;left:50%;top:0;transform:translate(-50%,-50%) scaleY(2.1739) rotate(calc(-1 * var(--tilt)));display:grid;place-items:center;width:34px;height:34px;padding:6px;border-radius:50%;border:1px solid #ffffff55;background:#090a0ce8;box-shadow:0 2px 12px #000a,0 0 8px #ffffff1c;}
-.zx-satellite img{display:block;width:100%;height:100%;object-fit:contain;}
-.zx-satellite-path:nth-child(even){animation-direction:reverse}
-@keyframes zx-orbit-spin{to{transform:rotate(calc(var(--tilt) + 360deg)) scaleY(.46)}}
-/* Center keeps orbiting logos legible; orbit movement is real, not a still image. */
-.zx-evm-networks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 10px;text-align:center;}
-.zx-evm-network{display:flex;flex-direction:column;align-items:center;gap:9px;color:#eee;font-size:12px;}
-.zx-evm-network img{width:34px;height:34px;object-fit:contain;}
-@media(max-width:700px){.zx-evm-orbit{width:min(100%,340px)}.zx-satellite{width:27px;height:27px;padding:5px}.zx-evm-network img{width:30px;height:30px}}
-@media(prefers-reduced-motion:reduce){.zx-satellite-path{animation:none}}
-
-/* Orbit stability and smooth rendering */
-.zx-satellite-path {
-  will-change: transform;
-  backface-visibility: hidden;
-}
-
-.zx-satellite {
-  backface-visibility: hidden;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .zx-satellite-path {
-    animation: none !important;
-  }
-}
-
-/* ZIXOMA SECTION 03 — ORBIT VISIBILITY FIX */
-
-/* Keep orbit paths visible outside the planet */
-.zx-evm-orbit {
-  overflow: visible;
-}
-
-/* Planet behind the orbiting logos */
-.zx-evm-planet {
-  z-index: 2;
-}
-
-/* Satellite paths above planet */
-.zx-satellite-path {
-  z-index: 4;
-  will-change: transform;
-}
-
-/* Bigger, clearly visible satellite logos */
-.zx-satellite {
-  width: 48px;
-  height: 48px;
-  padding: 5px;
-  background: #101114;
-  border: 1px solid rgba(255,255,255,.55);
-  box-shadow: 0 0 15px rgba(255,255,255,.16);
-}
-
-/* Right-side larger logos */
-.networks .zx-evm-network img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-}
-
-.networks .zx-evm-networks {
-  gap: 24px 14px;
-}
-
-.networks .zx-evm-network {
-  gap: 12px;
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-  .zx-satellite {
-    width: 36px;
-    height: 36px;
-  }
-
-  .networks .zx-evm-network img {
-    width: 48px;
-    height: 48px;
-  }
-}
-
-/* SECTION 03 — CORRECTED SATELLITE ORBITS */
-
-.zx-satellite-path {
-  inset: 0 !important;
-  transform: none !important;
-  animation: none !important;
-  z-index: 5;
-  pointer-events: none;
-}
-
-.zx-satellite-path .zx-satellite {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 42px;
-  height: 42px;
-  padding: 5px;
-  margin: 0;
-  animation: zx-ellipse-move var(--duration, 20s) linear infinite;
-  animation-delay: var(--delay, 0s);
-}
-
-@keyframes zx-ellipse-move {
-  0% {
-    transform: translate(-50%, -50%)
-      rotate(var(--tilt)) translateX(185px)
-      scaleY(.46) rotate(calc(-1 * var(--tilt)));
-  }
-  100% {
-    transform: translate(-50%, -50%)
-      rotate(var(--tilt)) rotate(360deg)
-      translateX(185px) scaleY(.46)
-      rotate(calc(-1 * var(--tilt))) rotate(-360deg);
-  }
-}
-
-@media (max-width: 700px) {
-  @keyframes zx-ellipse-move {
-    0% {
-      transform: translate(-50%, -50%)
-        rotate(var(--tilt)) translateX(135px);
-    }
-    100% {
-      transform: translate(-50%, -50%)
-        rotate(var(--tilt)) rotate(360deg)
-        translateX(135px);
-    }
-  }
-}
-
+.zx-satellite-path{position:absolute;inset:0;pointer-events:none;z-index:4}
+.zx-satellite{position:absolute;left:50%;top:50%;display:grid;place-items:center;width:46px;height:46px;padding:5px;border-radius:50%;border:1px solid #ffffff77;background:#101114;box-shadow:0 2px 12px #000a,0 0 12px #ffffff24;transform:translate(-50%,-50%);will-change:transform}
+.zx-satellite img{display:block;width:100%;height:100%;object-fit:contain}
+.zx-evm-networks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 14px;text-align:center}
+.zx-evm-network{display:flex;flex-direction:column;align-items:center;gap:12px;color:#eee;font-size:12px}
+.networks .zx-evm-network img{width:64px;height:64px;object-fit:contain}
+@media(max-width:700px){.zx-evm-orbit{width:min(100%,340px)}.zx-satellite{width:34px;height:34px;padding:4px}.networks .zx-evm-network img{width:48px;height:48px}}
+@media(prefers-reduced-motion:reduce){.zx-satellite{will-change:auto}}
