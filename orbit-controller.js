@@ -56,6 +56,24 @@
             calc(-50% + ${x.toFixed(2)}px),
             calc(-50% + ${y.toFixed(2)}px)
           )`;
+        
+/* Smooth fade when satellite moves behind planet */
+const depth = Math.sin(angle);
+
+/* Back half of orbit gradually fades */
+const fadeStart = 0.08;
+const fadeEnd = 0.65;
+
+const visibility = Math.max(
+  0,
+  Math.min(
+    1,
+    (fadeEnd - depth) / (fadeEnd - fadeStart)
+  )
+);
+
+satellite.style.opacity = visibility.toFixed(3);
+
       });
     }
 
