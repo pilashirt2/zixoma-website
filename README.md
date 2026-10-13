@@ -1,15 +1,9 @@
-# ZIXOMA Landing Page — Prototype v1
+# ZIXOMA V2 — approved design reference implementation
 
-Premium monochrome, responsive static landing page using the previously approved Monolith Z SVG brand assets.
-
-## Preview
-Open `index.html` in a browser, or serve the folder with `python -m http.server 8000`.
-
-## Vercel
-Import the folder as a static project with no build command, or upload it via a Git repository. Do not deploy until founder approval.
-
-## Important
-- Beta button is a **placeholder**; no waitlist backend or email address is configured.
-- All product security capabilities are labeled as planned or research concepts, not launched guarantees.
-- SVG logo is a reconstructed vector from the earlier brand asset pack; legal clearance is not established.
-- No tracking, wallet connection, or private-key storage.
+- Desktop: displays the founder-approved generated master artwork exactly as provided (pixel-faithful raster reference), with navigation hotspots linking to real content sections.
+- Mobile: responsive HTML/CSS interpretation for legibility, not an exact pixel match to the desktop artwork.
+- Feature descriptions and mock balances shown in the master artwork are concepts, NOT deployed or audited features. Actual supported networks are not yet announced.
+- No signup backend or playable video is included; do not claim otherwise.
+- To preview, open `index.html` in a browser. Deploy as a static site to Vercel or GitHub Pages.
+- Existing live V1 site is NOT changed by this package.
+- Before final launch, replace desktop raster with a fully rebuilt responsive layout if editable content, SEO and accessibility on desktop are required.
