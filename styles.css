@@ -146,3 +146,56 @@ footer p,footer>a:last-child{font-size:11px;color:#888}
   display: none !important;
 }
 
+/* ZIXOMA V2 — HERO TYPOGRAPHY */
+
+.hero-copy {
+  width: 52%;
+  max-width: 670px;
+}
+
+.hero h1 {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: clamp(50px, 5.5vw, 84px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.065em;
+  margin: 0 0 24px;
+  color: #fff;
+  text-shadow: 0 4px 30px rgba(0,0,0,.5);
+}
+
+.hero-copy p {
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.015em;
+  color: #c7c7c7;
+  max-width: 490px;
+}
+
+.hero-copy strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 22px 0;
+  max-width: 460px;
+}
+
+@media (max-width: 760px) {
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(43px, 9vw, 62px);
+    line-height: 1.07;
+    letter-spacing: -0.055em;
+  }
+
+  .hero-copy p {
+    font-size: 15px;
+  }
+}
+
