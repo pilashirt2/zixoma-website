@@ -91,7 +91,7 @@
   }
 }
 
-/* SECTION 03 — TRUE ELLIPTICAL SATELLITE ORBITS */
+/* SECTION 03 — CORRECTED SATELLITE ORBITS */
 
 .zx-satellite-path {
   inset: 0 !important;
@@ -101,36 +101,43 @@
   pointer-events: none;
 }
 
-/* Each satellite follows its own elliptical orbit */
 .zx-satellite-path .zx-satellite {
   position: absolute;
-  top: 50%;
   left: 50%;
-  margin: 0;
+  top: 50%;
   width: 42px;
   height: 42px;
   padding: 5px;
-  transform: translate(-50%, -50%);
-  animation: zx-true-orbit var(--duration, 20s) linear infinite;
+  margin: 0;
+  animation: zx-ellipse-move var(--duration, 20s) linear infinite;
   animation-delay: var(--delay, 0s);
 }
 
-/* Orbit animation using circular movement projected onto an ellipse */
-@keyframes zx-true-orbit {
-  from {
-    transform:
-      translate(-50%, -50%)
-      rotate(var(--tilt))
-      rotate(0deg)
-      translateX(43%)
-      rotate(0deg);
+@keyframes zx-ellipse-move {
+  0% {
+    transform: translate(-50%, -50%)
+      rotate(var(--tilt)) translateX(185px)
+      scaleY(.46) rotate(calc(-1 * var(--tilt)));
   }
-  to {
-    transform:
-      translate(-50%, -50%)
-      rotate(var(--tilt))
-      rotate(360deg)
-      translateX(43%)
-      rotate(-360deg);
+  100% {
+    transform: translate(-50%, -50%)
+      rotate(var(--tilt)) rotate(360deg)
+      translateX(185px) scaleY(.46)
+      rotate(calc(-1 * var(--tilt))) rotate(-360deg);
   }
 }
+
+@media (max-width: 700px) {
+  @keyframes zx-ellipse-move {
+    0% {
+      transform: translate(-50%, -50%)
+        rotate(var(--tilt)) translateX(135px);
+    }
+    100% {
+      transform: translate(-50%, -50%)
+        rotate(var(--tilt)) rotate(360deg)
+        translateX(135px);
+    }
+  }
+}
+
