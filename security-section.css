@@ -1,0 +1,164 @@
+/* ZIXOMA V2 — SECTION 02: CINEMATIC SECURITY. Paste at the END of styles.css */
+.features.z-security {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: block;
+  min-height: 810px;
+  padding: 76px max(5%, calc((100vw - 1500px)/2)) 38px;
+  background: #050505;
+  border-bottom: 1px solid #222;
+  color: #fff;
+}
+.z-security-atmosphere {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 55% 28%, rgba(220,225,232,.19), transparent 31%),
+    radial-gradient(ellipse at 50% 100%, rgba(140,148,160,.19), transparent 38%),
+    linear-gradient(180deg,#050505 0%,#121316 46%,#060606 100%);
+}
+.z-security-atmosphere::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.42;
+  background:repeating-linear-gradient(118deg,transparent 0 58px,rgba(255,255,255,.018) 59px,transparent 60px);
+  pointer-events:none;
+}
+.z-security-intro {
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:30px;
+  margin-bottom:32px;
+}
+.z-security-heading {max-width:630px}
+.z-security-kicker,.z-security-side-note {
+  display:block;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.28em;
+  color:#a7a7a7;
+}
+.z-security-heading h2 {
+  font-family:Inter,Arial,sans-serif;
+  font-size:clamp(48px,5.4vw,86px);
+  line-height:.99;
+  letter-spacing:-.075em;
+  font-weight:800;
+  margin:18px 0 20px;
+}
+.z-security-heading h2 em {font-style:normal;color:#d5d9df}
+.z-security-heading p {max-width:530px;color:#b8b8bd;font-size:16px;line-height:1.7;margin:0 0 20px}
+.z-security-learn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:26px;
+  padding:13px 19px;
+  border-radius:30px;
+  background:#f7f7f7;
+  color:#080808;
+  font-size:12px;
+  font-weight:700;
+  transition:transform .25s ease,background .25s ease;
+}
+.z-security-learn:hover {transform:translateY(-3px);background:#ddd}
+.z-security-side-note {padding-top:7px;text-align:right;white-space:nowrap}
+.z-security-side-note span {color:#626262;padding:0 6px}
+.z-security-pillars {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:17px;
+  align-items:end;
+  position:relative;
+  z-index:1;
+  padding-top:6px;
+}
+.z-security-pillars::before {
+  content:"";
+  position:absolute;
+  left:-10%;right:-10%;bottom:-36px;height:150px;
+  z-index:-1;
+  background:radial-gradient(ellipse at center,rgba(211,218,231,.18),transparent 65%);
+  filter:blur(18px);
+}
+.z-pillar {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-height:450px;
+  padding:21px 20px 22px;
+  margin-top:var(--pillar-offset);
+  overflow:hidden;
+  border:1px solid #42444a;
+  border-radius:4px 12px 4px 12px;
+  background:
+    linear-gradient(125deg,rgba(255,255,255,.10),transparent 25%,rgba(255,255,255,.025) 68%,rgba(255,255,255,.09)),
+    linear-gradient(165deg,#24262a 0%,#101113 42%,#060606 100%);
+  box-shadow:inset 2px 0 0 rgba(255,255,255,.12),inset -2px 0 0 rgba(0,0,0,.85),0 22px 50px rgba(0,0,0,.6);
+  transition:transform .4s ease,box-shadow .4s ease,border-color .4s ease;
+}
+.z-pillar::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(105deg,transparent 28%,rgba(255,255,255,.055) 43%,transparent 54%);
+  transform:translateX(-110%);
+  transition:transform .7s ease;
+}
+.z-pillar:hover {transform:translateY(-12px);border-color:#9ea3ad;box-shadow:0 28px 60px #000,inset 1px 0 rgba(255,255,255,.24)}
+.z-pillar:hover::before {transform:translateX(110%)}
+.z-pillar-top {display:flex;justify-content:space-between;gap:8px;color:#a5a6ab;font-size:11px;font-weight:700;letter-spacing:.14em}
+.z-pillar-top span:last-child {font-size:9px;letter-spacing:.09em}
+.z-pillar-symbol {
+  display:grid;
+  place-items:center;
+  height:178px;
+  margin:10px 0 12px;
+  color:#e4e7ed;
+  filter:drop-shadow(0 0 20px rgba(235,241,255,.23));
+}
+.z-pillar-symbol svg {width:min(78%,155px);height:auto;filter:drop-shadow(6px 10px 2px rgba(0,0,0,.9))}
+.z-pillar-copy {display:flex;flex-direction:column;flex:1;align-items:flex-start}
+.z-pillar-copy h3 {font-size:clamp(19px,1.8vw,27px);letter-spacing:-.055em;line-height:1.08;margin:0 0 9px;font-weight:800}
+.z-pillar-feature {font-size:13px;color:#d2d2d5;line-height:1.4}
+.z-pillar-copy p {font-size:12px;line-height:1.65;color:#aaaeb5;margin:13px 0 20px}
+.z-pillar-status {
+  margin-top:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  border:1px solid #55575e;
+  border-radius:40px;
+  padding:10px 13px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.1em;
+}
+.z-pillar-status span {font-size:17px;line-height:1}
+.z-security-disclaimer {text-align:center;color:#81838a;letter-spacing:.16em;font-size:9px;margin:35px 0 0}
+@media(max-width:1050px) {
+  .z-security-pillars {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .z-pillar {min-height:405px;margin-top:0}
+  .z-security-side-note {display:none}
+}
+@media(max-width:600px) {
+  .features.z-security {min-height:0;padding:65px 6% 35px}
+  .z-security-heading h2 {font-size:clamp(43px,11vw,64px)}
+  .z-security-heading p {font-size:14px}
+  .z-security-pillars {grid-template-columns:1fr;gap:17px}
+  .z-pillar {min-height:390px;padding:20px}
+  .z-pillar-symbol {height:145px}
+  .z-pillar-copy h3 {font-size:25px}
+  .z-security-disclaimer {font-size:8px;line-height:1.8}
+}
+@media(prefers-reduced-motion:reduce) {
+  .z-pillar,.z-pillar::before,.z-security-learn {transition:none}
+}
