@@ -162,3 +162,32 @@
 @media(prefers-reduced-motion:reduce) {
   .z-pillar,.z-pillar::before,.z-security-learn {transition:none}
 }
+
+/* ZIXOMA — Security Cinematic Background */
+
+#security.z-security {
+  position: relative;
+  isolation: isolate;
+  background: #050505 url("assets/security-cinematic.png")
+    center center / cover no-repeat;
+}
+
+#security.z-security::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.52) 0%,
+    rgba(0,0,0,.18) 48%,
+    rgba(0,0,0,.55) 100%
+  );
+}
+
+@media (max-width: 760px) {
+  #security.z-security {
+    background-position: 62% center;
+  }
+}
